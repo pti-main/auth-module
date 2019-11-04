@@ -26,11 +26,4 @@ public class Manager {
     /*public String findCodeByUser(User user){
         return code;
     }*/
-
-    public void findCodeByUser(User user){
-        String nick = user.getNick();
-        for (int i=0; i<users.size(); i++) {
-            System.out.println(users.get(i));
-        }
-    }
 }

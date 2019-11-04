@@ -18,9 +18,4 @@ public class Api {
     public User auth(@RequestParam String code){
         return manager.findUserByCode(code);
     }
-
-    @GetMapping("/code")
-    public void findCodeByUser(@RequestParam User user){
-        manager.findCodeByUser(user);
-    }
 }

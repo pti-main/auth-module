@@ -2,22 +2,35 @@ package pl.edu.wsi.technikum.auth;
 
 import org.springframework.stereotype.Service;
 
-import static pl.edu.wsi.technikum.auth.Rank.ADMIN;
-import static pl.edu.wsi.technikum.auth.Rank.USER;
+import java.util.HashMap;
 
 @Service
 public class Manager {
 
+    HashMap<String, User> users = new HashMap<String, User>();
+
     public Manager(){
-        User testUser1 = new User(USER, "pupil");
-        User testUser2 = new User(ADMIN, "root");
+        User testUser1 = new User("USER", "pupil");
+        User testUser2 = new User("ADMIN", "root");
+        users.put("code1", testUser1);
+        users.put("code2", testUser2);
     }
 
-    public User getUserInfo(User user){
-        return user;
+    public User findUserByCode(String code){
+        return users.get(code);
     }
 
-    /*public User findUserByCode(String code){
-        return user;
+    //jak znaleść kod do usera
+    //jak sprawdzić czy istnieje dany user
+
+    /*public String findCodeByUser(User user){
+        return code;
     }*/
+
+    public void findCodeByUser(User user){
+        String nick = user.getNick();
+        for (int i=0; i<users.size(); i++) {
+            System.out.println(users.get(i));
+        }
+    }
 }

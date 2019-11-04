@@ -14,13 +14,13 @@ public class Api {
         this.manager = manager;
     }
 
-    @PostMapping("/")
-    public User auth(@RequestBody User user){
-        return manager.getUserInfo(user);
+    @GetMapping("/")
+    public User auth(@RequestParam String code){
+        return manager.findUserByCode(code);
     }
 
-    /*@PostMapping("/")
-    public User auth(@RequestBody String code){
-        return manager.findUserByCode(code);
-    }*/
+    @GetMapping("/code")
+    public void findCodeByUser(@RequestParam User user){
+        manager.findCodeByUser(user);
+    }
 }

@@ -1,11 +1,10 @@
 package pl.edu.wsi.technikum.auth;
 
 public class User {
-    //private Rank rank || private String rank
-    private Rank rank;
+    private String rank;
     private String nick;
 
-    public User(Rank rank, String nick) {
+    public User(String rank, String nick) {
         this.rank = rank;
         this.nick = nick;
     }
@@ -13,11 +12,11 @@ public class User {
     public User() {
     }
 
-    public Rank getRank() {
+    public String getRank() {
         return rank;
     }
 
-    public void setRank(Rank rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 
